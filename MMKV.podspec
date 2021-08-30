@@ -30,7 +30,13 @@ Pod::Spec.new do |s|
     "CLANG_CXX_LIBRARY" => "libc++",
     "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
   }
-
+  s.watchos.pod_target_xcconfig = {
+    "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
+    "CLANG_CXX_LIBRARY" => "libc++",
+    "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'OPENSSL_NO_ASM=1',
+    'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '\$(inherited) OPENSSL_NO_ASM'
+  }
   s.dependency 'MMKVCore', '~> 1.2.10'
 
 end
