@@ -25,17 +25,20 @@ Pod::Spec.new do |s|
   s.framework    = "CoreFoundation"
   s.libraries    = "z", "c++"
   s.requires_arc = false
-  s.pod_target_xcconfig = {
+  s.ios.pod_target_xcconfig = {
     "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
     "CLANG_CXX_LIBRARY" => "libc++",
     "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'MMKV_IOS',
+    'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '\$(inherited) MMKV_IOS'
   }
   s.watchos.pod_target_xcconfig = {
     "CLANG_CXX_LANGUAGE_STANDARD" => "gnu++17",
     "CLANG_CXX_LIBRARY" => "libc++",
     "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
-    'GCC_PREPROCESSOR_DEFINITIONS' => 'OPENSSL_NO_ASM=1',
-    'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '\$(inherited) OPENSSL_NO_ASM'
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'MMKV_IOS_EXTENSION',
+    'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '\$(inherited) MMKV_IOS_EXTENSION'
+
   }
   s.dependency 'MMKVCore', '~> 1.2.10'
 
