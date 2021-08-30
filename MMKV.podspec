@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.author       = { "guoling" => "guoling@tencent.com" }
 
   s.ios.deployment_target = "9.0"
+  s.watchos.deployment_target = "6.0"
   s.osx.deployment_target = "10.9"
 
   s.source       = { :git => "https://github.com/Tencent/MMKV.git", :tag => "v#{s.version}" }
