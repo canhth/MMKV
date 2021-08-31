@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/Tencent/MMKV.git", :tag => "v#{s.version}" } 
 
-  s.source_files = "Core", "Core/*.{h,cpp,hpp}", "Core/aes/*.{h,cpp}", "Core/aes/openssl/*.{h,cpp}", "Core/crc32/*.h"
+  s.source_files = "Core", "Core/*.{h,cpp,hpp}", "Core/crc32/*.h"
   s.ios.source_files =  "Core/aes/openssl/*.S"
   s.osx.source_files = "Core/aes/openssl/*.S"
 
