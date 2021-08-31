@@ -38,6 +38,10 @@ Pod::Spec.new do |s|
     "CLANG_CXX_LIBRARY" => "libc++",
     "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" => "NO",
   }
+  s.watchos.pod_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'MMKV_DISABLE_CRYPT=1',
+      'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '\$(inherited) MMKV_DISABLE_CRYPT'
+  }
 
 end
 
